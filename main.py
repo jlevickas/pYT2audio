@@ -1,14 +1,15 @@
 from pytube import YouTube
+from pathlib import Path
 import os
 
 
 def main():
     while True:
         try:
-            video = YouTube(input("URL:"))
+            video = YouTube(input("URL: "))
+            downloads_path = str(Path.home() / "Downloads")
             audio = video.streams.get_audio_only()
-            print(audio)
-            audio.download()
+            audio.download(output_path=downloads_path)
 
             break
         except:
