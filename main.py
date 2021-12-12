@@ -1,6 +1,5 @@
 from pytube import YouTube
 from pathlib import Path
-import os
 
 
 def main():
